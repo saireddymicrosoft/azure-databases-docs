@@ -1,10 +1,10 @@
 ---
-title: "Tutorial: Migrate online from Google Cloud SQL for PostgreSQL using the migration service with the Azure portal and Azure CLI"
+title: "Tutorial: Migrate Online From Google Cloud SQL for PostgreSQL Using the Migration Service With the Azure Portal and Azure CLI"
 description: "Learn to migrate online seamlessly from Google Cloud SQL for PostgreSQL to Azure Database for PostgreSQL using the new migration service in Azure, simplifying the transition while ensuring data integrity and efficient deployment."
 author: apduvuri
 ms.author: adityaduvuri
 ms.reviewer: maghan
-ms.date: 06/19/2024
+ms.date: 02/07/2025
 ms.service: azure-database-postgresql
 ms.subservice: migration-guide
 ms.topic: tutorial
@@ -31,7 +31,7 @@ The migration service in Azure Database for PostgreSQL is a fully managed servic
 
 To complete the migration, you need the following prerequisites:
 
-[!INCLUDE [prerequisites-migration-service-postgresql-online-cloud-sql](includes/cloud-sql/prerequisites-migration-service-postgresql-online-cloud-sql.md)]
+[!INCLUDE[prerequisites-migration-service-postgresql-online-cloud-sql](includes/cloud-sql/prerequisites-migration-service-postgresql-online-cloud-sql.md)]
 
 ## Perform the migration
 
@@ -53,11 +53,11 @@ The migration service comes with a simple, wizard-based experience on the Azure 
 
 1. In the Flexible Server's Overview tab, on the left menu, scroll down to Migration and select it.
 
-    :::image type="content" source="media/tutorial-migration-service-cloud-sql-online/migration-portal-select.png" alt-text="Screenshot of the Migration selection." lightbox="media/tutorial-migration-service-cloud-sql-online/migration-portal-select.png":::
+    :::image type="content" source="media/tutorial-migration-service-cloud-sql-online/migration-portal-select.png" alt-text="Screenshot showing the Migration selection in the Azure portal, highlighting the migration option for PostgreSQL." lightbox="media/tutorial-migration-service-cloud-sql-online/migration-portal-select.png":::
 
 1. Select the **Create** button to migrate from Google Cloud SQL for PostgreSQL to Azure Database for PostgreSQL - Flexible Server. If this is your first time using the migration service, an empty grid appears with a prompt to begin your first migration.
 
-    :::image type="content" source="media/tutorial-migration-service-cloud-sql-online/portal-online-create-migration.png" alt-text="Screenshot of creating a migration." lightbox="media/tutorial-migration-service-cloud-sql-online/portal-online-create-migration.png":::
+    :::image type="content" source="media/tutorial-migration-service-cloud-sql-online/portal-online-create-migration.png" alt-text="Screenshot of creating a migration from the portal." lightbox="media/tutorial-migration-service-cloud-sql-online/portal-online-create-migration.png":::
 
     If you've already created migrations to your Azure Database for PostgreSQL target, the grid contains information about attempted migrations.
 
@@ -67,7 +67,7 @@ The migration service comes with a simple, wizard-based experience on the Azure 
 
 The first tab is the **Setup** tab, where the user needs to provide migration details like migration name source type to initiate the migrations.
 
-:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/01-portal-online-setup-cloud-sql.png" alt-text="Screenshot of the Setup migration in the Azure portal." lightbox="media/tutorial-migration-service-cloud-sql-online/01-portal-online-setup-cloud-sql.png":::
+:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/01-portal-online-setup-cloud-sql.png" alt-text="Screenshot showing the setup migration tab in the Azure portal." lightbox="media/tutorial-migration-service-cloud-sql-online/01-portal-online-setup-cloud-sql.png":::
 
 - **Migration name** is the unique identifier for each migration to this Flexible Server target. This field accepts only alphanumeric characters and doesn't accept any special characters except a hyphen (-). The name can't start with a hyphen and should be unique for a target server. No two migrations to the same Flexible Server target can have the same name.
 
@@ -116,7 +116,7 @@ The **select migration target** tab displays metadata for the Flexible Server ta
 
 - **Admin username** - Admin username of the target PostgreSQL server
 - **Password** - Password of the target PostgreSQL server
-- **Custom FQDN/IP (Optional)**: The custom FQDN/IP field is optional and can be used when the target is behind a custom DNS server or has custom DNS namespaces, making it accessible only via specific FQDNs or IP addresses. For example, this could include entries like `flexibleserver.example.com`, `198.1.0.2`, or a PostgreSQL FQDN such as `flexibleserver.postgres.database.azure.com`, if the custom DNS server contains the DNS zone `postgres.database.azure.com` or forwards queries for this zone to `168.63.129.16`, where the FQDN is resolved in the Azure public or private DNS zone.
+- **Custom FQDN/IP (Optional)**: The custom FQDN/IP field is optional and can be used when the target is behind a custom DNS server or has custom DNS namespaces, making it accessible only via specific FQDNs or IP addresses. For example, this could include entries like `flexibleserver.example.com`, `198.1.0.2`, or a PostgreSQL FQDN such as `flexibleserver.postgres.database.azure.com`, if the custom DNS server contains the DNS zone `postgres.database.azure.com` or forward queries for this zone to `168.63.129.16`, where the FQDN is resolved in the Azure public or private DNS zone.
 - **Test Connection** - Performs the connectivity test between the target and Source. Once the connection is successful, users can proceed with the next step. Otherwise, we need to identify the networking issues between the target and the Source and verify the username/password for the target. Test connection takes a few minutes to establish a connection between the target and the source.
 
 After the successful test connection, select the **Next: Select Database(s) for Migration**
@@ -125,7 +125,7 @@ After the successful test connection, select the **Next: Select Database(s) for 
 
 Under this tab, a list of user databases is inside the source server selected in the setup tab. You can select and migrate up to eight databases in a single migration attempt. If there are more than eight user databases, the migration process is repeated between the source and target servers for the next set of databases.
 
-:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/05-portal-online-select-database-migration-cloud-sql.png" alt-text="Screenshot of FetchDBmigration.":::
+:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/05-portal-online-select-database-migration-cloud-sql.png" alt-text="Screenshot of FetchDBmigration from the portal." lightbox="media/tutorial-migration-service-cloud-sql-online/05-portal-online-select-database-migration-cloud-sql.png":::
 
 After selecting the databases, select the **Next: Summary**
 
@@ -133,13 +133,13 @@ After selecting the databases, select the **Next: Summary**
 
 The **Summary** tab summarizes all the Source and target details for creating the validation or migration. Review the details and select the start button.
 
-:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/06-portal-online-summary-cloud-sql.png" alt-text="Screenshot of Summary migration.":::
+:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/06-portal-online-summary-cloud-sql.png" alt-text="Screenshot of Summary migration from the portal." lightbox="media/tutorial-migration-service-cloud-sql-online/06-portal-online-summary-cloud-sql.png":::
 
 #### Monitor the migration
 
 After you select the start button, a notification will appear in a few seconds saying that the validation or migration creation is successful. You'll then be automatically redirected to the **Migration** page of Flexible Server, which has a new entry for the recently created validation or migration.
 
-:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/cloud-sql-monitor.png" alt-text="Screenshot of Monitor migration." lightbox="media/tutorial-migration-service-cloud-sql-online/cloud-sql-monitor.png":::
+:::image type="content" source="media/tutorial-migration-service-cloud-sql-online/cloud-sql-monitor.png" alt-text="Screenshot of Monitor migration from the portal." lightbox="media/tutorial-migration-service-cloud-sql-online/cloud-sql-monitor.png":::
 
 The grid that displays the migrations has these columns: **Name**, **Status**, **Migration mode**, **Migration type**, **Source server**, **Source server type**, **Databases**, **Duration**, and **Start time**. The entries are displayed in the descending order of the start time, with the most recent entry at the top. You can use the refresh button to refresh the status of the validation or migration.
 Select the migration name in the grid to see the associated details.
@@ -187,7 +187,7 @@ Some possible migration states:
 | --- | --- |
 | **Failed** | Validation has failed. |
 | **Succeeded** | Validation is successful. |
-| **Warning** | Validation is in warning. | 
+| **Warning** | Validation is in warning. |
 
 #### Cutover
 
@@ -231,20 +231,20 @@ To begin the migration, you need to create a JSON file with the migration detail
 
 ```bash
 {
-	"properties": {
-		"SourceDBServerResourceId": "<<source hostname or IP address>>:<<port>>@<<username>>",
-		"SecretParameters": {
-			"AdminCredentials": {
-				"SourceServerPassword": "<<Source Password>>",
-				"TargetServerPassword": "<<Target Password>>"
-			},
-			"targetServerUserName": "<<Target username>>"
-		},
-		"DBsToMigrate": "<<comma separated list of databases in a array like - ["ticketdb","timedb","inventorydb"]>>",
-		"OverwriteDBsInTarget": "true",
-		"sourceType": "GCP_CloudSQL",
-		"sslMode": "Require"
-	}
+    "properties": {
+        "SourceDBServerResourceId": "<<source hostname or IP address>>:<<port>>@<<username>>",
+        "SecretParameters": {
+            "AdminCredentials": {
+                "SourceServerPassword": "<<Source Password>>",
+                "TargetServerPassword": "<<Target Password>>"
+            },
+            "targetServerUserName": "<<Target username>>"
+        },
+        "DBsToMigrate": "<<comma separated list of databases in a array like - ["ticketdb","timedb","inventorydb"]>>",
+        "OverwriteDBsInTarget": "true",
+        "sourceType": "GCP_CloudSQL",
+        "sslMode": "Require"
+    }
 }
 ```
 
@@ -304,5 +304,4 @@ After migration, you can perform the following tasks:
 
 - [Migrate offline from Google Cloud SQL for PostgreSQL](tutorial-migration-service-cloud-sql-offline.md)
 - [Migration service](concepts-migration-service-postgresql.md)
-- [Migrate from on-premises and Azure VMs](tutorial-migration-service-iaas.md)
 - [Known Issues and limitations](concepts-known-issues-migration-service.md)

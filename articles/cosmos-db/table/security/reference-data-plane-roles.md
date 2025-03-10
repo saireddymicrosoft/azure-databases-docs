@@ -8,14 +8,12 @@ ms.reviewer: iriaosara
 ms.service: azure-cosmos-db
 ms.subservice: table
 ms.topic: reference
-ms.date: 10/24/2024
-hidden: true
-ROBOTS: NOINDEX, NOFOLLOW
+ms.date: 02/05/2025
+appliesto:
+  - ✅ Table
 ---
 
 # Azure Cosmos DB for Table data plane built-in roles reference (preview)
-
-[!INCLUDE[Table](../../includes/appliesto-table.md)]
 
 :::image type="complex" source="media/reference-data-plane-roles/map.svg" border="false" alt-text="Diagram of the current location ('Reference') in the sequence of the deployment guide.":::
 Diagram of the sequence of the deployment guide including these locations, in order: Overview, Concepts, Prepare, Role-based access control, Network, and Reference. The 'Reference' location is currently highlighted.

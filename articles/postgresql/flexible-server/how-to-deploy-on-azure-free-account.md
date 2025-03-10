@@ -81,7 +81,7 @@ To complete this tutorial, you need:
 
     With public access, access to your server is limited to allowed IP addresses that you include in a firewall rule or to applications which can reach the instance of Azure Database for PostgreSQL flexible server via private endpoints. This method prevents external applications and tools from connecting to the server and any databases on the server, unless you create a rule to open the firewall for a specific IP address or range, or create a private endpoint.
 
-    With private access, access to your server is limited to your virtual network. For more information about connectivity methods, [**see Networking overview**](./concepts-networking.md).
+    With private access, access to your server is limited to your virtual network. For more information about connectivity methods, [**see Networking overview**](concepts-networking-private.md).
 
     For the purposes of this tutorial, enable public access to connect to the server.
 
@@ -102,7 +102,7 @@ To complete this tutorial, you need:
     :::image type="content" source="media/how-to-deploy-on-azure-free-account/review-create-postgresql.png" alt-text="Screenshot that shows the Review + create blade." lightbox="media/how-to-deploy-on-azure-free-account/review-create-postgresql.png":::
 
     > [!IMPORTANT]  
-    > While creating the Azure Database for PostgreSQL flexible server instance from your Azure free account, you still see an **Estimated cost per month** in the **Compute + Storage : Cost Summary** blade and **Review + Create** tab. But, as long as you are using your Azure free account, and your free service usage is within monthly limits (to view usage information, refer [**Monitor and track free services usage**](#monitor-and-track-free-services-usage) section below), you won't be charged for the service. We're currently working to improve the **Cost Summary** experience for free services.
+    > When creating the Azure Database for PostgreSQL flexible server instance using your Azure free account, you will see an **Estimated cost per month** in the **Compute + Storage: Cost Summary** blade and the **Review + Create** tab. However, as long as you stay within the monthly limits of your Azure free account (refer to the [**Monitor and track free services usage**](#monitor-and-track-free-services-usage) section below for usage information). There is no charge for the service. We are currently working to improve the **Cost Summary** experience for free services.
 
 1. Select **Create** to provision the server.
 
@@ -117,12 +117,12 @@ To complete this tutorial, you need:
 ## Connect and query
 
 Now that you've created an Azure Database for PostgreSQL flexible server instance in a resource group, you can connect to server and query databases by using the following Connect and query quickstarts:
-- [psql](quickstart-create-server-portal.md#connect-to-the-postgresql-database-using-psql)
-- [Azure CLI](connect-azure-cli.md)
-- [Python](connect-python.md)
-- [Java](connect-java.md)
-- [.NET](connect-csharp.md)
-- [Connect to a server in VNET](quickstart-create-connect-server-vnet.md)
+- [psql](quickstart-create-server.md#connect-using-psql).
+- [Azure CLI](connect-azure-cli.md).
+- [Python](connect-python.md).
+- [Java](connect-java.md).
+- [.NET](connect-csharp.md).
+- [Connect to a server in VNET](quickstart-create-connect-server-vnet.md).
 
 ## Monitor and track free services usage
 
@@ -169,7 +169,6 @@ Alternatively, if you don't expect to need these resources in the future, you ca
 
 - To delete the Azure Database for PostgreSQL flexible server instance, on the **Overview** page for the server, select **Delete**.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Deploy a Django app with App Service and PostgreSQL](/azure/app-service/tutorial-python-postgresql-app)
+- [Deploy a Django app with App Service and PostgreSQL](/azure/app-service/tutorial-python-postgresql-app).

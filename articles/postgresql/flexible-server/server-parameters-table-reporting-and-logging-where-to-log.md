@@ -4,10 +4,11 @@ description: Reporting and Logging / Where to Log server parameters for Azure Da
 author: nachoalonsoportillo
 ms.author: ialonso
 ms.reviewer: maghan
-ms.date: 09/26/2024
+ms.date: 01/07/2025
 ms.service: azure-database-postgresql
 ms.subservice: flexible-server
-ms.topic: include
+ms.topic: concept-article
+ms.custom: automatically generated
 zone_pivot_groups: postgresql-server-version
 ---
 # Reporting and Logging / Where to Log

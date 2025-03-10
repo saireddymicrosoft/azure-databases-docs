@@ -1,8 +1,8 @@
 ---
 title:  Delete items by partition key value using the Azure Cosmos DB SDK (preview)
 description: Learn how to delete items by partition key value using the Azure Cosmos DB SDKs
-author: AbhinavTrips
-ms.author: abtripathi
+author: richagaur
+ms.author: richagaur
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: how-to
@@ -25,7 +25,7 @@ The delete by partition key feature is an asynchronous, background operation tha
 
 Because the number of documents to be deleted may be large, the operation runs in the background. Though the physical deletion operation runs in the background, the effects are available immediately, as the documents to be deleted won't appear in the results of queries or read operations. 
 
-The delete by partition key operation is constrained to consume at most 10% of the total available RU/s on the container each second. This helps in limiting the resources used by this background task.
+The delete by partition key operation aims to consume at most 10% of the total available RU/s on the container each second on **best effort** basis. This helps in limiting the resources used by this background task.
 
 ## Getting started
 
@@ -49,7 +49,7 @@ Update your Azure Cosmos DB account to enable "Delete by partition key" feature 
     > The list of capabilities must always specify all capabilities that you want to enable, inclusively. This includes capabilities that are already enabled for the account that you want to keep. 
 
     ```azurecli-interactive
-       $capabilities += $DeleteByPk
+       $capabilities = $DeleteByPk
     ```
 
 - Step 4: Update Cosmos DB account to enable "Delete items by partition key" feature
@@ -126,7 +126,7 @@ In some scenarios, a delete by partition key operation may not immediately guara
 - [Continuous backup (point in time restore)](../continuous-backup-restore-introduction.md) - a restore that is triggered during an ongoing delete by partition key operation may contain the results of the documents to be deleted in the restored collection. It isn't recommended to use this preview feature if you have a scenario that requires continuous backup.
 
 ### Limitations
-- [Hierarchical partition keys](../hierarchical-partition-keys.md) deletion isn't supported. This feature permits the deletion of items solely based on the last level of partition keys. For example, consider a scenario where a partition key consists of three hierarchical levels: country, state, and city. In this context, the delete by partition keys functionality can be employed effectively by specifying the complete partition key, encompassing all levels, namely country/state/city. Attempting to delete using intermediate partition keys, such as country/state or solely country, will result in an error.
+- [Hierarchical partition keys](../hierarchical-partition-keys.md) deletion isn't supported. This feature permits the deletion of items solely based on the last level of partition keys. For example, consider a scenario where a partition key consists of three hierarchical levels: country/region, state, and city. In this context, the delete by partition keys functionality can be employed effectively by specifying the complete partition key, encompassing all levels, namely country/region, state, and city. Attempting to delete using intermediate partition keys, such as country/region or state, or solely country/region, will result in an error.
 
 ## How to give feedback or report an issue/bug
 * Email cosmosPkDeleteFeedbk@microsoft.com with questions or feedback.

@@ -8,15 +8,13 @@ ms.reviewer: stefarroyo
 ms.service: azure-cosmos-db
 ms.subservice: table
 ms.topic: glossary
-ms.date: 10/24/2024
+ms.date: 02/05/2025
 ai-usage: ai-assisted
-hidden: true
-ROBOTS: NOINDEX, NOFOLLOW
+appliesto:
+  - ✅ Table
 ---
 
 # Security glossary for Azure Cosmos DB for Table
-
-[!INCLUDE[Table](../../includes/appliesto-table.md)]
 
 :::image type="complex" source="media/glossary/map.svg" border="false" alt-text="Diagram of the current location ('Concepts') in the sequence of the deployment guide.":::
 Diagram of the sequence of the deployment guide including these locations, in order: Overview, Concepts, Prepare, Role-based access control, and Reference. The 'Concepts' location is currently highlighted.
